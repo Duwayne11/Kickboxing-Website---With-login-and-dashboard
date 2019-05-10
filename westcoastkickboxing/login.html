@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1">
+
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/ihover.css">		
+<!--<link rel="stylesheet" href="main.css">-->
+			<script type="text/javascript">
+			function ShowAdmin(){
+				var element = document.getElementById('ShowAdmin');
+				
+				if(element.style.display == 'none'){
+					element.style.display = 'block';
+				}else{
+					element.style.display = 'none';
+				}
+			}//End of show admin function
+			
+			function ShowPatient(){
+				var element = document.getElementById('ShowPatient');
+				
+				if(element.style.display == 'none'){
+					element.style.display = 'block';
+				}else{
+					element.style.display = 'none';
+				}
+			}//End of show patient function
+			
+			function ShowDoctor(){
+				var element = document.getElementById('ShowDoctor');
+				
+				if(element.style.display == 'none'){
+					element.style.display = 'block';
+				}else{
+					element.style.display = 'none';
+				}
+			}
+
+		</script>
+		
+		<style>
+		#loginMain{
+	margin-left:19%;
+	float: left;
+	}
+		
+		
+		.navbar 	{font-size: 1.1em;
+			letter-spacing: 0.1em;
+			width: 100%;
+			}
+  
+.carousel-inner{
+  width:100%;
+  max-height: 350px !important;
+  }
+
+.footnote p{
+		font-size 1.1em;
+		color: white;
+		letter-spacing: 1px;
+		text-align: center;
+}
+
+
+#errorMessage{
+	width: 30%;  
+	margin-top: 20%;
+	margin-left: 35%;
+	height: 40px; 
+letter-spacing: 2px;
+	
+	color: #FF0000;
+	text-align: center;
+	padding-top: 8px;
+	
+}
+
+
+
+
+
+/* Full-width input fields */
+	input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 26px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+/* Set a style for all buttons */
+	button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 26px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+	font-size:20px;
+}
+button:hover {
+    opacity: 0.8;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+.avatar {
+    width: 200px;
+	height:200px;
+    border-radius: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    border: 1px solid #888;
+    width: 75%; 
+	padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    animation: zoom 0.6s
+}
+@keyframes zoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+</style>
+			
+
+	
+</head>
+<body background="./pictures/fancy_deboss.png"> 
+	<div class="container-fluid">
+	
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  
+
+			  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				  <li class="nav-item">
+					<a class="nav-link" href="index.html"><b>Home</b> </a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="about.html"><b>About</b></a>
+				  </li>
+				    <li class="nav-item">
+					<a class="nav-link" href="contact.html"><b>Contact-Us</b></a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href=".\slidebox\galery.html"><b>Galery</b></a>
+				  </li>
+				    <li class="nav-item">
+					<a class="nav-link" href=".\registration\register.php"><b>Register</b></a>
+				  </li>
+				   <li class="nav-item login active">
+					<a class="nav-link" href="Login.html"><b>Login</b><span class="sr-only">(current)</span></a>
+				  </li>
+				 
+				</ul>
+			  
+			  </div>
+			</nav>
+	<br>
+	
+	<div id="loginAs">
+		<h3>Login As</h3>
+	
+	</div>
+	
+		
+				
+		<div id="loginMain" class="row">
+			
+			<div class="col-md-4 col-sm-4 col-xs-12">
+									<!-- <div class="loginrow"> -->
+				
+									<!--<div class="column2"> -->
+						 <div id="adminIcon" onclick="document.getElementById('modal-wrapperAdmin').style.display='block'">
+							<div class="multi-borderLogin">
+										<img src="./pictures/admin.png" alt="Admin" style="width:158px" style="height: 126px" onmouseover="ShowAdmin()" onmouseout="ShowAdmin()">
+											<li id="ShowAdmin" style="display: none;">Admin</li>
+							</div>
+						</div>
+						
+			</div>
+					
+			<div class="col-md-4 col-sm-4 col-xs-12">
+					<!--<div class="column2"> -->
+						<div id="adminIcon" onclick="document.getElementById('modal-wrapper').style.display='block'">
+							<div class="multi-borderLogin">
+								 <img src="./pictures/patient.png" alt="Patient" style="width:158px" style="height: 126px" onmouseover="ShowPatient()" onmouseout="ShowPatient()">
+									<li id="ShowPatient" style="display: none;">Patient</li>
+							</div>
+						</div>
+					</div>
+					
+			<div class="col-md-4 col-sm-4 col-xs-12">
+				<!---	<div class="column2"> -->
+						<div id="adminIcon" onclick="document.getElementById('modal-wrapperDoctor').style.display='block'">
+							<div class="multi-borderLogin">
+							 <img src="./pictures/doctor2.png" alt="Doctor" style="width:158px" style="height: 126px" onmouseover="ShowDoctor()" onmouseout="ShowDoctor()">
+								<li id="ShowDoctor" style="display: none;">Doctor</li>
+							</div>
+						</div>
+			</div>
+		</div>
+		
+
+
+<div id="modal-wrapper" class="modal">
+  
+  <form class="modal-content animate"  method="post" action="login.php">
+        
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
+      <img src="./pictures/doctor.png" alt="Admin" style="width:158px" style="height: 126px" onmouseover="ShowAdmin()" onmouseout="ShowAdmin()">
+      <h1 style="text-align:center">Please Login</h1>
+    </div>
+
+	
+    <div class="container">
+      <input type="text" placeholder="Enter Username" name="userName">
+      <input type="password" placeholder="Enter Password" name="userPassword">        
+      <button type="submit" name="btnlogin" >Patient Login</button>
+      <input type="checkbox" style="margin:26px 30px;"> Remember me      
+      <a href="register.php" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Registration ?</a>
+    </div>
+    
+  </form>
+  
+</div>
+	<!-- Doctor Login form op popup-->
+
+				<div id="modal-wrapperDoctor" class="modal">
+				  
+				  <form class="modal-content animate"  method="post" action="login.php">
+						
+					<div class="imgcontainer">
+					  <span onclick="document.getElementById('modal-wrapperDoctor').style.display='none'" class="close" title="Close PopUp">&times;</span>
+					  <img src="./pictures/doctor.png" alt="Admin" style="width:158px" style="height: 126px" onmouseover="ShowAdmin()" onmouseout="ShowAdmin()">
+					  <h1 style="text-align:center">Please Login</h1>
+					</div>
+
+					
+					<div class="container">
+					  <input type="text" placeholder="Enter Username" name="docUsername">
+					  <input type="password" placeholder="Enter Password" name="docPass">        
+					  <button type="submit" name="doclogin" >Doctor Login</button>
+					  
+					 
+					</div>
+					
+
+				  </form>
+				  
+				</div> <!-- End Doctor Login form op popup-->
+					<!-- Admin Login form op popup-->
+<div id="modal-wrapperAdmin" class="modal">
+  
+  <form class="modal-content animate"  method="post" action="login.php">
+        
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('modal-wrapperAdmin').style.display='none'" class="close" title="Close PopUp">&times;</span>
+      <img src="./pictures/doctor.png" alt="Admin" style="width:158px" style="height: 126px" onmouseover="ShowAdmin()" onmouseout="ShowAdmin()">
+      <h1 style="text-align:center">Please Login</h1>
+    </div>
+
+	
+    <div class="container">
+      <input type="text" placeholder="Enter Username" name="adminusername">
+      <input type="password" placeholder="Enter Password" name="adminpass">        
+      <button type="submit" name="adminlogin" >Admin Login</button>
+     
+     
+    </div>
+
+  </form>
+  
+</div>
+
+</div><!-- container close -->
+
+<script>
+// If user clicks anywhere outside of the modal, Modal will close
+
+var modal = document.getElementById('modal-wrapper');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+// Doctor Login popup Script
+
+var modal = document.getElementById('modal-wrapperDoctor');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<script>
+// Admin Login popup Script
+
+var modal = document.getElementById('modal-wrapperAdmin');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>				
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
